@@ -1,0 +1,31 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  title_font = Anonymous Pro 11
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    audible_bell = True
+    background_color = "#0f1609"
+    background_darkness = 0.47
+    background_image = None
+    background_type = transparent
+    copy_on_selection = True
+    cursor_color = "#a96ba6"
+    cursor_shape = ibeam
+    font = Anonymous Pro 11
+    foreground_color = "#ecdeff"
+    palette = "#22281f:#b83c3c:#4b712c:#ada129:#2f2c71:#712c6e:#1f4b57:#898194:#333c2e:#ca5d5d:#87a96b:#d0c239:#4e4e96:#a96ba6:#536e75:#c5b9d5"
+    scrollback_infinite = True
+    show_titlebar = False
+    use_system_font = False
+    visible_bell = True
