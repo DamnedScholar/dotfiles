@@ -23,7 +23,7 @@
     fontFamily: "Menlo"
     invisibles: {}
     showIndentGuide: true
-    softWrapAtPreferredLineLength: true
+    softWrap: true
   "go-plus":
     goPath: "/Users/holman/Code/go"
   "release-notes":

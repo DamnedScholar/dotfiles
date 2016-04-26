@@ -20,9 +20,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo " on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo " on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
     fi
   fi
 }
@@ -40,7 +40,7 @@ unpushed () {
 need_push () {
   if [[ $(unpushed) == "" ]]
   then
-    echo " "
+    echo ""
   else
     echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
   fi
@@ -67,11 +67,51 @@ rb_prompt() {
   fi
 }
 
-directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+directory_check_symlinks() {
+  export ROOTDIR=/
+  # Clear directory stack for the purpose of the subshell
+  dirs -c
+  # While loop to iterate pushd until ~0 is equal to / or ~.
+  until [[ ~0 == $ROOTDIR || ~0 == $HOME ]]; do
+    pushd -q ..
+  done
+
+  # Store the number of directories in the stack and the list in an array.
+  dirs_size=$(dirs -v | wc -l)
+  dirs_names=$(dirs)
+
+  #dirs_names=("${(@)${(s: :)dirs_names}}")
+
+  #echo "$dirs_names: "
+
+  # Check each stack entry for symbolic links and add the directory name to the prompt path.
+  for (( i = 1; i <= $dirs_size; i++ )); do
+    #echo "$dirs_names[(w)$i] >"
+    dir_here=$dirs_names[(w)$i]
+
+    if [ -L $dir_here ]; then
+      echo "$dir_here is a symlink"
+    else
+      echo "$dir_here is not a symlink"
+    fi
+  done
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+directory_name() {
+  echo "%{$fg_bold[cyan]%}${PWD/#$HOME/~}%\/%{$reset_color%}"
+}
+
+user() {
+  echo "%{$fg_bold[green]%}%n%{$reset_color%}"
+}
+
+function prompt_char {
+    git branch >/dev/null 2>/dev/null && echo '±' && return
+    hg root >/dev/null 2>/dev/null && echo '☿' && return
+    echo ''
+}
+
+export PROMPT=$'\n$(rb_prompt)in $(prompt_char)$(directory_check_symlinks)$(git_dirty)$(need_push) as $(user)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
