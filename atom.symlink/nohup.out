@@ -13,3 +13,15 @@ Error: auto-updater is not implemented on this platform
     at /usr/local/share/atom/resources/app.asar/src/browser/auto-update-manager.js:53:24
     at doNTCallback0 (node.js:419:9)
     at process._tickCallback (node.js:348:13)
+Cannot read property 'length' of undefined
+TypeError: Cannot read property 'length' of undefined
+    at AtomApplication.<anonymous> (/usr/local/share/atom/resources/app.asar/src/browser/atom-application.js:648:40)
+    at AtomApplication.module.exports.AtomApplication.openPaths (/usr/local/share/atom/resources/app.asar/src/browser/atom-application.js:653:10)
+    at /usr/local/share/atom/resources/app.asar/src/browser/atom-application.js:970:24
+    at Function.wrappedCallback (/usr/local/share/atom/resources/atom.asar/browser/api/lib/dialog.js:82:16)
+Cannot read property 'length' of undefined
+TypeError: Cannot read property 'length' of undefined
+    at AtomApplication.<anonymous> (/usr/local/share/atom/resources/app.asar/src/browser/atom-application.js:648:40)
+    at AtomApplication.module.exports.AtomApplication.openPaths (/usr/local/share/atom/resources/app.asar/src/browser/atom-application.js:653:10)
+    at /usr/local/share/atom/resources/app.asar/src/browser/atom-application.js:970:24
+    at Function.wrappedCallback (/usr/local/share/atom/resources/atom.asar/browser/api/lib/dialog.js:82:16)
