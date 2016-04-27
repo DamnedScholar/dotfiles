@@ -1,7 +1,10 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
-. /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+source /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# Keep sensitive information like passwords off of Github.
+source ~/.local.zsh
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code

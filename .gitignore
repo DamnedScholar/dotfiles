@@ -1,3 +1,9 @@
+git/gitconfig.local.symlink
+
+# Local ZSH options. May contain passwords.
+zsh/.local.zsh
+
+# Ignore Atom folders by default unless an exception needs to be made.
 atom.symlink/.apm
 atom.symlink/.npm
 atom.symlink/.node-gyp
@@ -9,8 +15,7 @@ atom.symlink/storage
 atom.symlink/themes
 atom.symlink/electron
 
-git/gitconfig.local.symlink
-
+# Ignore config folders by default unless an exception needs to be made.
 config.symlink/Atom
 config.symlink/dmenu-recent
 config.symlink/libfm

@@ -89,7 +89,7 @@ directory_check_symlinks() {
     #echo "$dirs_names[(w)$i] >"
     dir_here=$dirs_names[(w)$i]
 
-    if ! [ -f "$dir_here" ]; then
+    if [ -L "$dir_here" ]; then
       echo "$dir_here is a symlink"
     else
       echo "$dir_here is not a symlink"
