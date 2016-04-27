@@ -1,3 +1,6 @@
+### Core Reference
+http://www.bash2zsh.com/zsh_refcard/refcard.pdf
+
 ### Variable Manipulation
 http://tim.vanwerkhoven.org/post/2012/10/28/ZSH/Bash-string-manipulation
 
