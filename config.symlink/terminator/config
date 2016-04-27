@@ -16,7 +16,7 @@
   [[default]]
     audible_bell = True
     background_color = "#0f1609"
-    background_darkness = 0.47
+    background_darkness = 0.69
     background_image = None
     background_type = transparent
     copy_on_selection = True

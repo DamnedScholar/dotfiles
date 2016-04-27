@@ -80,19 +80,19 @@ directory_check_symlinks() {
   dirs_size=$(dirs -v | wc -l)
   dirs_names=$(dirs)
 
-  #dirs_names=("${(@)${(s: :)dirs_names}}")
-
-  #echo "$dirs_names: "
-
   # Check each stack entry for symbolic links and add the directory name to the prompt path.
   for (( i = 1; i <= $dirs_size; i++ )); do
-    #echo "$dirs_names[(w)$i] >"
     dir_here=$dirs_names[(w)$i]
+    dir_here_a=${(s:/:)dir_here}
+    typeset -a file_state
+    file_state=$(command file -b ${~dir_here})
+    file_state=${(s: :)file_state}
+    dir_truth=$(command realpath -q $dir_here)
 
-    if [ -L "$dir_here" ]; then
-      echo "$dir_here is a symlink"
+    if [[ $file_state[(w)1] == "symbolic" ]]; then
+      echo -n "%{$fg_bold[cyan]%}$dir_here_a[(ws:/:)-1]%\/%{$reset_color%}"
     else
-      echo "$dir_here is not a symlink"
+      echo -n "%{$fg[cyan]%}$dir_here_a[(ws:/:)-1]%\/%{$reset_color%}"
     fi
   done
 }
