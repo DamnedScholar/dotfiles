@@ -92,7 +92,7 @@ directory_check_symlinks() {
     if [[ $file_state[(w)1] == "symbolic" ]]; then
       echo -n "%{$fg_bold[cyan]%}$dir_here_a[(ws:/:)-1]%\/%{$reset_color%}"
     else
-      echo -n "%{$fg[cyan]%}$dir_here_a[(ws:/:)-1]%\/%{$reset_color%}"
+      echo -n "%{$fg_bold[blue]%}$dir_here_a[(ws:/:)-1]%\/%{$reset_color%}"
     fi
   done
 }
