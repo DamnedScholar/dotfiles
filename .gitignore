@@ -14,6 +14,7 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 atom.symlink/electron
+atom.symlink/nohup.out
 
 # Ignore config folders by default unless an exception needs to be made.
 config.symlink/Atom
@@ -41,3 +42,4 @@ config.symlink/dconf
 config.symlink/htop
 config.symlink/pcmanfm
 config.symlink/user-dirs.locale
+config.symlink/GitKraken
