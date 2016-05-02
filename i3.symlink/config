@@ -168,8 +168,8 @@ bindsym $mod+Shift+7 move container to workspace number 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace number 8; workspace 8
 
 # Open applications on specific workspaces
-assign [class="(?i)chromium"] 2
-assign [class="(?i)atom"] 3
+assign [class="(?i)chromium" window_role="browser"] 2
+assign [class="(?i)atom" window_role="browser-window"] 3
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 2
@@ -196,6 +196,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [title="Page Unresponsive"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -261,25 +262,23 @@ bar {
 	font pango:Linux Libertine G,Symbola 10
 
   colors {
-		separator #2ECC71
-		background #22281f
-		statusline #0f1609
-		focused_workspace #FFFFFF #2ECC71 #000000
-		active_workspace #000000 #A4A28D #FFFFFF
-		inactive_workspace #A4A28D #000000 #DDDDDD
-		urgent_workspace #2ECC71 #900000 #FFFFFF
+		separator #ada129
+		background #0f1609
+		statusline #22281f
+		focused_workspace #ecdeff #a96ba6 #0f1609
+		active_workspace #0f1609 #536e75 #ecdeff
+		inactive_workspace #898194 #22281f #536e75
+		urgent_workspace #d0c239 #ca5d5d #ecdeff
 	}
 }
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id lxsession
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
- exec --no-startup-id pulseaudio
- exec --no-startup-id pa-applet
+exec --no-startup-id pulseaudio
+exec --no-startup-id pa-applet
 # exec --no-startup-id blueman
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id compton -b

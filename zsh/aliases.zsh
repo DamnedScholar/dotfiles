@@ -5,9 +5,13 @@ zman() {
   PAGER="less -g -s '+/^       "$1"'" man zshall
 }
 
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+# Pimp my 'ls'
+export LS_OPTIONS='--human-readable --size --classify --group-directories-first --color=auto --time-style=+"%Y.%m.%d %H:%M" -F'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
+alias ll='ls -l $LS_OPTIONS'
+alias la='ls -la $LS_OPTIONS'
+
 alias grep='grep --color=tty -d skip'
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes

@@ -1,0 +1,6 @@
+#!/usr/bin/zsh
+
+# Check if /var/lib/pacman/db.lck exists. If so, print unicode lock 
+
+[[ -a /var/lib/pacman/db.lck ]]:
+  status=""

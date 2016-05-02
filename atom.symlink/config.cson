@@ -20,7 +20,7 @@
       "glacier-syntax"
     ]
   editor:
-    fontFamily: "Menlo"
+    fontFamily: "Anonymous Pro"
     invisibles: {}
     showIndentGuide: true
     softWrap: true

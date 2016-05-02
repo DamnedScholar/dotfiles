@@ -35,7 +35,7 @@ fi
 if [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; then
   echo $BLOCK_INSTANCE down # full text
   echo $BLOCK_INSTANCE down # short text
-  echo \#b83c3c # color
+  echo \#ca5d5d # color
   exit
 fi
 

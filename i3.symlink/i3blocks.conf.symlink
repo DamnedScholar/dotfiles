@@ -68,9 +68,12 @@ color=#ecdeff
 # (defaults to 10 for 10%).
 [disk]
 label=📚
-markup=pango
 #instance=/mnt/data
 interval=30
+color=#ecdeff
+
+[updates]
+full_text=<span font="DejaVu Sans Book 11">⌬</span><span font="DejaVu Sans Book 11">⌬</span> blah
 color=#ecdeff
 
 [separator]
@@ -88,11 +91,18 @@ instance=wlo1
 interval=1
 color=#ecdeff
 
+[bandwidth]
+instance=wlo1
+label=⚖
+interval=5
+color=#ecdeff
+
 [iface]
 instance=eno1
 interval=1
 
 [bandwidth]
+instance=eno1
 label=⚖
 interval=5
 color=#ecdeff
@@ -110,8 +120,18 @@ interval=1
 [cpu_usage]
 label=⚗
 interval=10
-min_width=⚗ 100.00%
+#min_width=⚗ 100.00%
 color=#ecdeff
+full_text=
+
+# Temperature
+#
+# Support multiple chips through lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
+label=🌡
+interval=10
 full_text=
 
 [separator]
@@ -156,17 +176,6 @@ color=#ecdeff
 #[openvpn]
 #interval=20
 #color=#ecdeff
-
-# Temperature
-#
-# Support multiple chips through lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[temperature]
-label=TEMP
-interval=10
-full_text=
-color=#ecdeff
 
 # Key indicators
 #

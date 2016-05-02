@@ -62,10 +62,12 @@ $body .= "$short_text\n";
 if ($percent < 20) {
 	print "#b83c3c\n"; # color
 } elsif ($percent < 40) {
-	print "#ada129\n"; # color
-} elsif ($percent < 60) {
 	print "#d0c239\n"; # color
+} elsif ($percent < 60) {
+	print "#4e4a96\n"; # color
 } elsif ($percent < 85) {
+	print "#1f4b57\n"; # color
+} else {
 	print "#87a96b\n"; # color
 }
 

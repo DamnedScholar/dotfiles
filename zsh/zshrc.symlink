@@ -1,7 +1,7 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
-source /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+# source /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Keep sensitive information like passwords off of Github.
 source ~/.local.zsh
@@ -17,6 +17,8 @@ then
   source ~/.localrc
 fi
 
+# times
+
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
@@ -27,11 +29,15 @@ do
   source $file
 done
 
+# times
+
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
   source $file
 done
+
+# times
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
@@ -43,9 +49,13 @@ do
   source $file
 done
 
+# times
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # If zsh-syntax-highlighting is in use, load it before this.
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 unset config_files
+
+# times

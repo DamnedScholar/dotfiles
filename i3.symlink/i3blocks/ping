@@ -13,8 +13,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
 ttg=$(ping -c 1 google.com | awk '/time=/ { print $8 $9 }' | sed 's/time=//')
 ms=$(ping -c 1 google.com | awk '/time=/ { print $8 $9 }' | sed 's/time=//' | sed 's/\..ms//')
+
+if [[ ! $ttg ]]; then
+  ttg="--.-ms"
+fi
 
 echo "$ttg" # full text
 echo "$ttg" # short text
