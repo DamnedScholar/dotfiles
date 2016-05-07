@@ -1,11 +1,15 @@
 #!/usr/bin/expect
 
-set timeout = 0
+set timeout 1
 
-while { $timeout = 1 } {
-  spawn ssh-tunnel
-  set timeout = 0
-  expect {
-    "ssh: connect to host 50.82.72.166 port 22: Connection timed out" { set timeout = 1; exp_continue }
+while { $timeout == 1 } {
+  spawn -noecho ssh -f -N -T -R22224:localhost:22223 damnedscholar@50.82.72.166
+  send_user "Looking for host"
+  set timeout 0
+  wait { set timeout 1; send_user "We've encountered an error. Re-running."; exp_continue }
+  expect -re {
+    "ssh\:.*" { set timeout 1; send_user "We've encountered an error. Re-running."; exp_continue }
   }
 }
+
+send_user "Out of the loop."
