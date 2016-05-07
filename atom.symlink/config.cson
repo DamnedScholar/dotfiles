@@ -22,7 +22,6 @@
   editor:
     fontFamily: "Anonymous Pro"
     invisibles: {}
-    scrollSensitivity: 10
     showIndentGuide: true
     softWrap: true
   "go-plus":
