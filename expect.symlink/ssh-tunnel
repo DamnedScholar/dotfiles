@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+
+set timeout = 0
+
+while { $timeout = 1 } {
+  spawn ssh-tunnel
+  set timeout = 0
+  expect {
+    "ssh: connect to host 50.82.72.166 port 22: Connection timed out" { set timeout = 1; exp_continue }
+  }
+}
