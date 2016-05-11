@@ -3,7 +3,7 @@
 set timeout 1
 
 while { $timeout == 1 } {
-  spawn -noecho ssh -f -N -T -R22224:localhost:22223 damnedscholar@50.82.72.166
+  spawn -noecho ssh -N -T -R22221:localhost:22220 damnedscholar@50.82.72.166
   send_user "Looking for host"
   set timeout 0
   wait
