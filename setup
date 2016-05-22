@@ -13,7 +13,7 @@ git clone https://github.com/powerline/fonts.git && fonts/install.sh
 sudo pacman -S zsh zsh-doc zshdb zsh-completions
 
 # i3blocks
-sudo pacman -S lm_sensors xsensors sysstat tk gnuplot qt5-docs
+sudo pacman -S lm_sensors xsensors sysstat tk gnuplot
 
 # Network Management
 sudo pacman -S wpa_actiond ifplugd dialog wpa_supplicant_gui hostapd python2-wpactrl
