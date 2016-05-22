@@ -49,9 +49,13 @@ printf "%.1f%%\n", $cpu_usage;
 # Print color, if needed
 if ($cpu_usage >= $t_crit) {
     print "#b83c3c\n";
+    system("xscreensaver-command -deactivate")
     exit 33;
 } elsif ($cpu_usage >= $t_warn) {
     print "#d0c239\n";
+    system("xscreensaver-command -deactivate")
 }
+
+# https://www.jwz.org/xscreensaver/man3.html has possibilities.
 
 exit 0;
