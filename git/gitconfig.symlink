@@ -16,7 +16,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-	editor = atom
+	      editor = atom
 [apply]
         whitespace = nowarn
 [mergetool]
