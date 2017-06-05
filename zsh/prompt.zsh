@@ -111,7 +111,7 @@ function prompt_char {
     echo ''
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(prompt_char)$(directory_check_symlinks)$(git_dirty)$(need_push) as $(user)\n› '
+export PROMPT=$'\n$(rb_prompt)in $(directory_check_symlinks)$(git_dirty)$(prompt_char)$(need_push) as $(user)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
