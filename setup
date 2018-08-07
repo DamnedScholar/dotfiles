@@ -7,7 +7,7 @@ sudo pacman -S terminator
 # Powerline
 sudo pacman -S python-pip powerline powerline-common powerline-vim
 powerline-fonts
-git clone https://github.com/powerline/fonts.git && fonts/install.sh
+git clone https://github.com/powerline/fonts.git && fonts/install.sh && rm fonts
 
 # ZSH
 sudo pacman -S zsh zsh-doc zshdb zsh-completions
@@ -17,16 +17,11 @@ sudo pacman -S lm_sensors xsensors sysstat tk gnuplot qt5-docs
 
 # Network Management
 sudo pacman -S wpa_actiond ifplugd dialog wpa_supplicant_gui hostapd python2-wpactrl
-git clone https://github.com/codywd/NetGUI
+git clone https://github.com/codywd/NetGUI github/NetGUI
 
-sudo pacman -S aircrack-ng cowpatty pyrit sslsplit reaver sslstrip thc-ipv6
+# sudo pacman -S aircrack-ng cowpatty pyrit sslsplit reaver sslstrip thc-ipv6
 
-sudo pacman -R networkmanager networkmanager-dispatcher-ntpd libnm-glib networkmanager-openconnect networkmanager-openvpn networkmanager-pptp networkmanager-vpnc nm-connection-editor
-
-# Session Management
-sudo pacman -S lxsession-gtk3
-
-sudo pacman -R polkit-gnome pamac
+# sudo pacman -R networkmanager networkmanager-dispatcher-ntpd libnm-glib networkmanager-openconnect networkmanager-openvpn networkmanager-pptp networkmanager-vpnc nm-connection-editor
 
 # Science
 sudo pacman -S qtiplot
