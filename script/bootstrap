@@ -132,6 +132,12 @@ install_dotfiles () {
 
   link_file "$DOTFILES_ROOT" "$HOME/.dotfiles"
 
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.template' -not -path '*.git*')
+  do
+    dst="$HOME/.$(basename "${src%.*}")"
+    touch "$dst"
+  done
+
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
